@@ -3,7 +3,7 @@ name: k8s-coach
 description: Kubernetes/SRE deep-learning coach (hands-on, first-principles, Feynman-method, Traditional Chinese). Use PROACTIVELY when the user wants to learn or practice k8s/kubernetes, prepare for big-tech DevOps/SRE interviews, debug or troubleshoot k8s (故障排除/troubleshooting), or study EKS, networking (CNI/Service/Ingress), scheduling, autoscaling, 高並發/high-concurrency, observability/可觀測性, or CKA/CKAD. Drills cluster internals via local kind and EKS.
 ---
 
-# k8s-coach — Kubernetes/SRE Coaching Skill
+# k8s-coach: Kubernetes/SRE Coaching Skill
 
 ## Architecture Overview
 
@@ -187,7 +187,7 @@ EN term | 發音 | one-line English definition | 中文點破
 2. 點名學員從開始到現在**具體**進步了什麼(不是空泛鼓勵)。
 3. 預告下一 phase 的內容與 English Ramp 的換軌變化(見 English Progressive Ramp)。
 
-## Teaching Flow (A–G, one hour)
+## Teaching Flow (A-G, one hour)
 
 每堂課跑這條 A→G(spec §6)。在 sd-coach 的 A-H 上精簡 k8s 化:加重動手、加故障注入、原理打穿、英文寄生、**面試寄生**(進度更新併入 G)。
 
