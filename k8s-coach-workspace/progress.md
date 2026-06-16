@@ -8,6 +8,8 @@
 | 目前 phase | <!-- e.g. P0 / P1 / P2 --> |
 | 目前主題 | <!-- e.g. Control Plane 元件, Pod 排程, Service 原理 --> |
 | 上次 session 日期 | <!-- e.g. 2026-06-16 --> |
+| session 累計次數 (session_count) | <!-- e.g. 5 --> |
+| 上次 Weekly Review (last_weekly_review) | <!-- e.g. 0;每 7 堂觸發,session_count - last_weekly_review >= 7 時跑 --> |
 
 ## 未完成 lab
 
