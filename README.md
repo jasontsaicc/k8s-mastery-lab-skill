@@ -34,6 +34,23 @@ Drilling to first principles (OS, networking, distributed systems, control theor
 
 ---
 
+## Install
+
+Prerequisites: `kind`, `kubectl`, and an SSH key registered with your GitHub account.
+
+```bash
+git clone git@github.com:jasontsaicc/k8s-mastery-lab-skill.git ~/jason/k8s-coach
+mkdir -p ~/.claude/skills && ln -s ~/jason/k8s-coach ~/.claude/skills/k8s-coach
+```
+
+The symlink puts the repo on Claude Code's skill path so the skill can read `k8s-coach-workspace/progress.md`.
+
+### Sync across machines
+
+Session state (`progress.md`, mistake/term registries, cluster configs) is tracked in git. To continue on another VM: `git pull` before each session, then `git commit` + `git push` after. Always pull before starting so the two machines never diverge.
+
+---
+
 ## How to Start
 
 1. Open Claude Code in this directory (or anywhere `k8s-coach` is on the skill path).

@@ -34,6 +34,23 @@
 
 ---
 
+## 安裝
+
+前置：`kind`、`kubectl`、一把已註冊在 GitHub 帳號的 SSH key。
+
+```bash
+git clone git@github.com:jasontsaicc/k8s-mastery-lab-skill.git ~/jason/k8s-coach
+mkdir -p ~/.claude/skills && ln -s ~/jason/k8s-coach ~/.claude/skills/k8s-coach
+```
+
+symlink 把 repo 掛上 Claude Code 的 skill 路徑，skill 才讀得到 `k8s-coach-workspace/progress.md`。
+
+### 跨機器同步
+
+session 狀態 (`progress.md`、mistake/term registry、叢集設定) 都進 git。換另一台 VM 續傳：上課前 `git pull`，下課後 `git commit` + `git push`。一律先 pull 再開工，兩台才不會分岔。
+
+---
+
 ## 如何開始
 
 1. 在此目錄開啟 Claude Code (或任何 `k8s-coach` 在 skill 路徑上的地方)。
