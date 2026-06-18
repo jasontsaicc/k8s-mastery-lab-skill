@@ -23,3 +23,14 @@
 ---
 
 <!-- 從這裡開始加你自己的踩坑記錄 -->
+
+**日期:** 2026-06-18
+**主題:** YAML 欄位拼錯 / 讀 validation error
+
+**踩的坑:** Deployment apply 失敗 `strict decoding error: unknown field "spec.selector.matchLabels"`(把 `matchLabels` 打成 `metaLabels`)
+
+**根因:** k8s 嚴格解碼,遇到不認識的欄位直接退件(防打錯字卻無聲失敗)。錯誤訊息的 `unknown field "A.B.C"` 是藏寶圖,完整路徑直指出錯的層級與欄位。
+
+**正確做法:** 讀 `unknown field "路徑"` → 去檔案找該路徑那層,看欄位名「不是拼錯就是放錯層」。selector 認親的正確欄位是 `matchLabels`,且必須等於 template.metadata.labels。
+
+**下次抽考日:** 2026-06-21
