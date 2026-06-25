@@ -17,6 +17,7 @@
 | compressible resource | /kəmˈpres.ə.bəl/ | A resource you can throttle without killing the workload: give it less and it just runs slower (CPU). | 可壓縮資源(CPU),給少一點只是變慢、不會死,所以超 limit 是 throttle | 2026-06-24 | 2026-06-27 |
 | incompressible resource | /ˌɪn.kəmˈpres.ə.bəl/ | A resource that can't be reclaimed once handed out: you either have the byte or you don't (memory), so exceeding the limit means the process gets killed. | 不可壓縮資源(memory),還不回來,超 limit 只能砍 → OOMKilled | 2026-06-24 | 2026-06-27 |
 | OOMKilled | /ˌoʊ.oʊˈem kɪld/ | A container killed by the kernel's OOM killer (exit code 137 = SIGKILL) for exceeding its cgroup memory limit. | 容器吃爆自己 cgroup 的 memory limit,被 kernel OOM killer 砍,exit 137 | 2026-06-24 | 2026-06-27 |
+| thundering herd | /ˈθʌn.dər.ɪŋ hɝːd/ | Many clients hit the same resource at the exact same moment and overwhelm it (e.g. all pods restart and reconnect to one DB at once). | 羊群效應:大量請求同時湧向同一資源把它壓垮(如全 Pod 同時重連 DB);錨定 liveness 誤設→集體重啟雪崩 | 2026-06-25 | 2026-06-28 |
 
 <!-- 2026-06-22 移除 kubeconfig / context / kind 三張卡:定義型瑣碼詞/工具名,面試不考,違反價值門檻(見 SKILL.md 術語卡)。current-context 改記為 ops 安全習慣,不當單字卡。 -->
 <!-- ops 安全習慣(非術語卡): `kubectl config current-context` = 動手前先確認指到哪個叢集,避免誤打 prod EKS。 -->

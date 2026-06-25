@@ -46,7 +46,7 @@
 
 **正確做法:** 判斷句「**Would a restart fix this?**」Yes(自己 deadlock/卡死)→ liveness 可管;No(DB/下游/外部依賴,重啟也修不好)→ 那是 readiness,頂多切流量等恢復。liveness 只檢查「我這個 process 還活著嗎」。
 
-**下次抽考日:** 2026-06-25
+**下次抽考日:** 2026-07-02 (2026-06-25 抽考通過,核心判斷句即答對;worst-case 連鎖經 3 段引導後完整講出:慢 DB → 全 Pod liveness 同時失敗 → 同時 restart「羊群效應/thundering herd」→ 服務從『慢』跳級成 CrashLoopBackOff 全掛 → reconnection 風暴回壓 DB 正回饋。推 +7)
 
 ---
 
