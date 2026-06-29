@@ -73,7 +73,7 @@
 
 **正確做法:** 一句話骨幹 = 「封包**不去** ClusterIP;是**出發地本機 kernel** 照 **kube-proxy 寫的規則**做 **DNAT**,把目的地換成 **Endpoints** 名單裡的真 Pod IP」。分清:iptables 規則=做改寫的**手(動作)**;Endpoints=該挑哪個 Pod 的**名單(資料)**,由 controller reconcile loop 維護、readiness 當閘門。手 ≠ 名單。
 
-**下次抽考日:** 2026-06-30 (新坑,下次 session A 段**冷測**:不給鷹架,要他自己一口氣講完五步整條;過了才算謎題B Gate ✅) → **已於 2026-06-28 D段+F段達成,Gate ✅,改抽考全鏈精度(誰寫 resolv.conf=kubelet、機率LB、conntrack 回程)**
+**下次抽考日:** 2026-07-13 (2026-06-28 D段+F段首過 Gate ✅;**2026-06-29 Weekly Review #1 二度無鷹架冷測再 PASS**=徹底封印,推 +14。今日補兩洞:(a) resolv.conf 裡的 nameserver IP=**CoreDNS 的 ClusterIP**,不是 backend 的;他把「resolv.conf 給去哪問 / CoreDNS 給 backend 是誰」兩步壓成一步,已拆;(b) 回程 reverse-NAT 那張表名字想不起來→補 **conntrack**(概念本懂)。下次抽考改問全鏈精度:誰寫 resolv.conf=kubelet、KUBE-SVC 機率LB 怎麼挑一個 SEP、conntrack 回程反向改寫。)
 
 ---
 
